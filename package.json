@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "postbuild": "copy /Y \"package.json\" \"build-dist/package.json\" && copy /Y \".env\" \"build-dist/.env\"",
-    "start": "node build-dist/index.js",
-    "dev": "if not exist \"build-dev\" mkdir \"build-dev\"",
-    "postdev": "copy /Y \".env\" \"build-dev/.env\" && concurrently \"tsc -w --project tsconfig.dev.json\" \"cd build-dev && nodemon index.js\""
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -33,11 +29,7 @@
     "request": "^2.88.2",
     "yt-search": "^2.10.4"
   },
-  "devDependencies": {
-    "@types/request": "^2.48.8",
-    "@types/yt-search": "^2.3.2",
-    "concurrently": "^7.6.0",
-    "nodemon": "^2.0.20",
-    "typescript": "^4.9.5"
+  "engines" : { 
+    "node" : "18.14.2"
   }
 }
